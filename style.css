@@ -217,8 +217,7 @@ button:active {
   }
  .navbar-brand .img-profile {
     max-width: 12rem;
-    max-height: 12rem;
-    border: 0.3rem solid #1873cde0;
+    max-height: 10rem;
     border-radius: 100%;
   }
 .navbar-collapse {
