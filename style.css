@@ -239,3 +239,215 @@ button:active {
     display: none;
   }
 }
+#dif1 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: inline-block;
+  color: white;
+  background: rgb(41, 168, 224);
+}
+
+#dif2 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: inline-block;
+  color: white;
+  background: rgb(221, 126, 81);
+}
+
+#dif3 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: inline-block;
+  color: white;
+  background: rgb(175, 79, 122);
+}
+
+#dif4 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: inline-block;
+  color: white;
+  background: rgb(138, 166, 90);
+}
+
+/* Prevent scrollbars to appear when waves go out of bound */
+.sonar-wrapper {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  padding: 10rem 0;
+}
+
+/* The circle */
+.sonar-emitter {
+  position: relative;
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 9999px;
+  background-color: HSL(49,100%,50%);
+}
+
+/* the 'wave', same shape and size as its parent */
+.sonar-wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  background-color: HSL(45,100%,50%);
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/*
+  Animate!
+  NOTE: add browser prefixes where needed.
+*/
+.sonar-wave {
+  animation: sonarWave 2s linear infinite;
+}
+
+@keyframes sonarWave {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+}
+
+.menu {
+  position: relative;
+  margin-top: 15%;
+  left: 50%;
+  width: 0px;
+  transform: translate(-50%, 55%);
+}
+
+.toggle {
+  display: none;
+}
+
+.toggle + .style {
+    width: 200px;
+    height: 124px;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 5;
+    display: block;
+    max-width: 200px;
+    margin-bottom: 0;
+    background: #ff0000;
+    color: #fff;
+    font-size: 2.5em;
+    padding-top: 75px;
+    text-align: center;
+   -webkit-transition: all .8s;
+   -moz-transition: all .8s;
+   -o-transition: all .8s;
+   -ms-transition: all .8s;
+   transition: all .8s;
+
+}
+
+.menu p{
+    max-width: 85px;
+    text-align: center;
+    margin: 0 auto;
+    line-height: 15px;
+    padding-top: 50px;
+    font-weight: 700;
+    font-size: 2em;
+
+}
+
+.toggle + .style:hover{
+	-webkit-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
+    -moz-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
+    -ms-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
+    -o-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
+    box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, .7);
+}
+
+.toggle:checked + .style {
+  transform: translate(-50%, -50%) scale(.5);
+
+}
+
+.menu input[type=checkbox] + label:before {
+    content: "";
+    position: absolute;
+}
+
+.toggle + .style:before, .toggle + .style:after {
+  content: "";
+  position: absolute;
+  margin: -3px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.toggle + .style:before {
+
+  width: 30px;
+  height: 0px;
+  left: 10px;
+  top: 25px;
+}
+
+.toggle + .style:after {
+  width: 0px;
+  height: 30px;
+  left: 25px;
+  top: 10px;
+}
+
+.toggle:checked + .style:before, .toggle:checked + .style:after {
+  transform: rotate(135deg);
+}
+
+.toggle ~ .tab {
+    position: absolute;
+    background: #ff0000;
+    color: #fff;
+    width: 120px;
+    height: 120px;
+    left: 0px;
+    top: 0px;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 0.3s;
+    opacity: 0;
+    border-radius: 50%;
+}
+
+.toggle:checked ~ .tab {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.menu > .toggle:checked ~ .tab {
+  top: -122px;
+  left: 100px;
+  background-color: #12123
+  transition-delay: 0s;
+}
+
